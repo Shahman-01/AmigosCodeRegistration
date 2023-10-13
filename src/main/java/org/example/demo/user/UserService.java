@@ -1,10 +1,8 @@
-package org.example.demo.service;
+package org.example.demo.user;
 
 import lombok.AllArgsConstructor;
-import org.example.demo.model.User;
 import org.example.demo.registration.token.ConfirmationToken;
 import org.example.demo.registration.token.ConfirmationTokenService;
-import org.example.demo.repo.UserRepo;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -51,5 +49,9 @@ public class UserService implements UserDetailsService {
 		tokenService.saveToken(confirmationToken);
 
 		return token;
+	}
+
+	public int enableUser(String email) {
+		return userRepo.enableUser(email);
 	}
 }

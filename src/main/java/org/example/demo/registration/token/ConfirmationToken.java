@@ -1,10 +1,9 @@
 package org.example.demo.registration.token;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.example.demo.model.User;
+import org.example.demo.user.User;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -12,7 +11,9 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @NoArgsConstructor
+@Entity
 public class ConfirmationToken {
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
@@ -23,12 +24,11 @@ public class ConfirmationToken {
 	private LocalDateTime createdAt;
 	@Column(nullable = false)
 	private LocalDateTime expiredAt;
-	@Column(nullable = false) 
-	private LocalDateTime confirmAt;
+	private LocalDateTime confirmedAt;
 	@ManyToOne
 	@JoinColumn(
 			nullable = false,
-			name = "user_seq_id"
+			name = "usr_id_seq"
 	)
 	private User user;
 

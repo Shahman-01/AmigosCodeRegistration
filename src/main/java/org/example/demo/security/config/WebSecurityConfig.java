@@ -1,7 +1,7 @@
 package org.example.demo.security.config;
 
 import lombok.AllArgsConstructor;
-import org.example.demo.service.UserService;
+import org.example.demo.user.UserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
