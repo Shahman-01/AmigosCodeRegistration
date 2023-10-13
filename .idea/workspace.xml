@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="348739af-9de8-482a-ab93-ae8e4d4900a9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/registration/EmailValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/registration/token/ConfirmationTokenRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/registration/token/ConfirmationTokenService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/registration/RegistrationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/registration/RegistrationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/registration/token/ConfirmationToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/registration/token/ConfirmationToken.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +21,7 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -119,7 +118,8 @@
       <workItem from="1697112174360" duration="35000" />
       <workItem from="1697112219667" duration="11000" />
       <workItem from="1697112236680" duration="12000" />
-      <workItem from="1697112264353" duration="1274000" />
+      <workItem from="1697112264353" duration="2573000" />
+      <workItem from="1697173758047" duration="777000" />
     </task>
     <servers />
   </component>

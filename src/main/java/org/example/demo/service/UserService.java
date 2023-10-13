@@ -2,6 +2,8 @@ package org.example.demo.service;
 
 import lombok.AllArgsConstructor;
 import org.example.demo.model.User;
+import org.example.demo.registration.token.ConfirmationToken;
+import org.example.demo.registration.token.ConfirmationTokenService;
 import org.example.demo.repo.UserRepo;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -9,11 +11,15 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.util.UUID;
+
 @Service
 @AllArgsConstructor
 public class UserService implements UserDetailsService {
 	private final UserRepo userRepo;
 	private final BCryptPasswordEncoder passwordEncoder;
+	private final ConfirmationTokenService tokenService;
 	@Override
 	public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
 		return userRepo.findByEmail(s)
@@ -33,8 +39,17 @@ public class UserService implements UserDetailsService {
 
 		userRepo.save(user);
 
-		// TODO: send confirmation token
+		String token = UUID.randomUUID().toString();
 
-		return "it works";
+		ConfirmationToken confirmationToken = new ConfirmationToken(
+				token,
+				LocalDateTime.now(),
+				LocalDateTime.now().plusMinutes(15),
+				user
+		);
+
+		tokenService.saveToken(confirmationToken);
+
+		return token;
 	}
 }
